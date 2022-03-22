@@ -2,7 +2,7 @@
 
 ####Description: Concatenate each genome to generate alignment windows using a *.list file
 ####List file: The absolute path for the five genomes in order, P1 - first genome, P2 - second genome...
-####Use: buildAlignment.py DATASETXXX.list
+####Use: createDfoil_fasta_final.py DATASETXXX.list
 ####Written by: Henrique V Figueiro - henriquevf@gmail.com
 
 from Bio import SeqIO
@@ -29,19 +29,19 @@ chr_dir = os.getcwd()+'/'+dataset_name+'/windows/'
 #Read genome filenames and get spp names
 
 P1 = str(lines[0].rstrip())
-P1_name = str(P1.split('/')[-1].split('_')[0])
+P1_name = str(P1.split('/')[-1].split('.')[0])
 
 P2 = str(lines[1].rstrip())
-P2_name = str(P2.split('/')[-1].split('_')[0])
+P2_name = str(P2.split('/')[-1].split('.')[0])
 
 P3 = str(lines[2].rstrip())
-P3_name = str(P3.split('/')[-1].split('_')[0])
+P3_name = str(P3.split('/')[-1].split('.')[0])
 
 P4 = str(lines[3].rstrip())
-P4_name = str(P4.split('/')[-1].split('_')[0])
+P4_name = str(P4.split('/')[-1].split('.')[0])
 
 P5 = str(lines[4].rstrip())
-P5_name = str(P5.split('/')[-1].split('_')[0])
+P5_name = str(P5.split('/')[-1].split('.')[0])
 
 #Create each window fasta file and append the subsequent genomes
 
@@ -86,4 +86,4 @@ with open(P5, 'r') as handle:
             seq_name = str('>'+P5_name)
             seq =  str(record.seq)
             out_file.write(seq_name + '\n' + seq + '\n')
-        out_file.close() 
+        out_file.close()
