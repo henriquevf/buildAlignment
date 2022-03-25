@@ -47,7 +47,7 @@ P5_name = str(P5.split('/')[-1].split('.')[0])
 
 with open(P1, 'r') as handle:
     for record in SeqIO.parse(handle, 'fasta'):
-        with open(chr_dir + record.id + ".fa", 'w') as out_file:
+        with open(chr_dir + record.id + ".fasta", 'w') as out_file:
             seq_name = str('>'+ P1_name)
             seq =  str(record.seq)
             out_file.write(seq_name + '\n' + seq + '\n')
@@ -56,7 +56,7 @@ with open(P1, 'r') as handle:
         
 with open(P2, 'r') as handle:
     for record in SeqIO.parse(handle, 'fasta'):
-        with open(chr_dir + record.id + ".fa", 'a') as out_file:
+        with open(chr_dir + record.id + ".fasta", 'a') as out_file:
             seq_name = str('>'+P2_name)
             seq =  str(record.seq)
             out_file.write(seq_name + '\n' + seq + '\n')
@@ -65,7 +65,7 @@ with open(P2, 'r') as handle:
 
 with open(P3, 'r') as handle:
     for record in SeqIO.parse(handle, 'fasta'):
-        with open(chr_dir + record.id + ".fa", 'a') as out_file:
+        with open(chr_dir + record.id + ".fasta", 'a') as out_file:
             seq_name = str('>'+P3_name)
             seq =  str(record.seq)
             out_file.write(seq_name + '\n' + seq + '\n')
@@ -73,7 +73,7 @@ with open(P3, 'r') as handle:
 
 with open(P4, 'r') as handle:
     for record in SeqIO.parse(handle, 'fasta'):
-        with open(chr_dir + record.id + ".fa", 'a') as out_file:
+        with open(chr_dir + record.id + ".fasta", 'a') as out_file:
             seq_name = str('>'+P4_name)
             seq =  str(record.seq)
             out_file.write(seq_name + '\n' + seq + '\n')
@@ -82,7 +82,7 @@ with open(P4, 'r') as handle:
 
 with open(P5, 'r') as handle:
     for record in SeqIO.parse(handle, 'fasta'):
-        with open(chr_dir + record.id + ".fa", 'a') as out_file:
+        with open(chr_dir + record.id + ".fasta", 'a') as out_file:
             seq_name = str('>'+P5_name)
             seq =  str(record.seq)
             out_file.write(seq_name + '\n' + seq + '\n')
