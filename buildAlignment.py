@@ -43,6 +43,9 @@ P4_name = str(P4.split('/')[-1].split('.')[0])
 P5 = str(lines[4].rstrip())
 P5_name = str(P5.split('/')[-1].split('.')[0])
 
+P6 = str(lines[5].rstrip())
+P6_name = str(P6.split('/')[-1].split('.')[0])
+
 #Create each window fasta file and append the subsequent genomes
 
 with open(P1, 'r') as handle:
@@ -84,6 +87,14 @@ with open(P5, 'r') as handle:
     for record in SeqIO.parse(handle, 'fasta'):
         with open(chr_dir + record.id + ".fasta", 'a') as out_file:
             seq_name = str('>'+P5_name)
+            seq =  str(record.seq)
+            out_file.write(seq_name + '\n' + seq + '\n')
+        out_file.close()
+
+with open(P6, 'r') as handle:
+    for record in SeqIO.parse(handle, 'fasta'):
+        with open(chr_dir + record.id + ".fasta", 'a') as out_file:
+            seq_name = str('>'+P6_name)
             seq =  str(record.seq)
             out_file.write(seq_name + '\n' + seq + '\n')
         out_file.close()
